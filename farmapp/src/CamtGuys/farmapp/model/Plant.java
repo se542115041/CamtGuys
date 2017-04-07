@@ -1,5 +1,5 @@
 package CamtGuys.farmapp.model;
 
-public class Plant {
+public interface Plant {
 
 }
