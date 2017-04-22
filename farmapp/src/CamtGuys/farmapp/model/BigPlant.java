@@ -6,13 +6,21 @@ public class BigPlant implements Plant {
 	private int age;//days
 	private int ageofFruitable;
 	private String fruit;
+	private int numbOfFruit;
+	private boolean status;
 	
-	BigPlant(String name,double HP,int age,int ageofFruitable,String fruit){
+	public BigPlant(){
+		
+	}
+	
+	void BigPlant(String name,double HP,int age,int ageofFruitable,String fruit,int numbOfFruit){
 		setName(name);
 		setHP(HP);
 		setAge(age);
 		setAgeofFruitable(ageofFruitable);;
 		setFruit(fruit);;
+		setNumbOfFruit(numbOfFruit);
+		
 	}
 	
 	public void setName(String name){
@@ -44,6 +52,14 @@ public class BigPlant implements Plant {
 	}
 	public String getFruit(){
 		return this.fruit;
+	}
+	
+	public void setNumbOfFruit(int numbOfFruit) {
+		this.numbOfFruit = numbOfFruit;
+	}
+	
+	public int getNumbOfFruit() {
+		return numbOfFruit;
 	}
 
 
