@@ -9,17 +9,19 @@ public class BigPlant implements Plant {
 	private int numbOfFruit;
 	private boolean status;
 	
-	public BigPlant(){
-		
-	}
 	
-	void BigPlant(String name,double HP,int age,int ageofFruitable,String fruit,int numbOfFruit){
+
+	public BigPlant(String name,double HP,int age,int ageofFruitable,String fruit,int numbOfFruit){
 		setName(name);
 		setHP(HP);
 		setAge(age);
 		setAgeofFruitable(ageofFruitable);;
 		setFruit(fruit);;
 		setNumbOfFruit(numbOfFruit);
+		
+	}
+	
+	public BigPlant(){
 		
 	}
 	
