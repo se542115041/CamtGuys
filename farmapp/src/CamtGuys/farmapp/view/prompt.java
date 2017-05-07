@@ -54,7 +54,10 @@ public class prompt {
 		   
 	   }
 	   else if(menu==3){
-
+		   for(Plant p : garden.getListofplant()){
+			   p.glowUp();
+			   
+		   }
 		   
 	    }
 	   else if(menu==4){
@@ -64,6 +67,15 @@ public class prompt {
 		   userMenu();
 		   
 	    }
+	   
+	   else if(menu==5){
+		   selectMenu.reset();
+		   garden.viewDetailAllPlant();	   
+		   System.out.print("Choose your Plant : ");
+		   menu = selectMenu.nextInt();
+		   garden.getListofplant().get(menu - 1).water();
+	   }
+	   
 	   else if(menu==0){
 		   System.out.println("bye bye!");
 

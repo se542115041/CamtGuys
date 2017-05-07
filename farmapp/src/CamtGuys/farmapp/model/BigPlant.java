@@ -7,7 +7,7 @@ public class BigPlant implements Plant {
 	private int ageofFruitable;
 	private String fruit;
 	private int numbOfFruit;
-	private boolean status;
+	private boolean statusWater;
 	
 	
 
@@ -18,18 +18,33 @@ public class BigPlant implements Plant {
 		setAgeofFruitable(ageofFruitable);;
 		setFruit(fruit);;
 		setNumbOfFruit(numbOfFruit);
+		this.statusWater = false;
 		
 	}
 	
 	public BigPlant(){
 		
 	}
+	public void setStatusWater(boolean status){
+		this.statusWater = status;
+	}
+	public boolean getStatusWater(){
+		return this.statusWater;
+	}
 	
 	public void setName(String name){
 		this.name = name;
 	}
 	public void setHP(Double HP){
+		if(HP <= 10.0){
 		this.HP = HP;
+		}
+		else if (HP <= 0){
+		this.HP = 0;
+		}
+		else if (HP > 10){
+		this.HP = 10;
+		}
 	}
 	public void setAge(int age){
 		this.age = age;
@@ -61,7 +76,11 @@ public class BigPlant implements Plant {
 	}
 	
 	public int getNumbOfFruit() {
-		return numbOfFruit;
+		if(HP > 8){
+			return numbOfFruit + 2;
+		}
+		else
+			return numbOfFruit;
 	}
 
 
@@ -72,7 +91,16 @@ public class BigPlant implements Plant {
 
 	public void glowUp() {
 		this.age = this.age+1;
+		if(statusWater == true) setHP(HP + 0.5);
+		else if(statusWater == false) setHP(HP - 1);
+		this.statusWater = false;
 	}
+
+	public void water() {
+		// TODO Auto-generated method stub
+		this.statusWater = true;
+	}
+
 	
 	
 }

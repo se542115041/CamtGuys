@@ -5,35 +5,44 @@ import java.util.List;
 
 public class Garden implements Plantable {
 
-	List<Plant> Listofplant = new ArrayList<Plant>();
+	private List<Plant> Listofplant = new ArrayList<Plant>();
 	
 	public void harvestPlant(Plant plant) {
 		// TODO Auto-generated method stub
-		Listofplant.add(plant);
+		getListofplant().add(plant);
 	}
 
 	public String viewDetailPlant(int index) {
 		// TODO Auto-generated method stub
-		if(Listofplant.size() == 0){
+		if(getListofplant().size() == 0){
 			return "No Plant";
 		}
 		else{
-			return Listofplant.get(index).viewDetail();
+			return getListofplant().get(index).viewDetail() + " StatusWater : " + getListofplant().get(index).getStatusWater();
 		}
 	}
 
 	public void viewDetailAllPlant() {
 		int i = 1;
 		// TODO Auto-generated method stub
-		if(Listofplant.size() == 0){
+		if(getListofplant().size() == 0){
 			System.out.println("No Plant");
 		}
 		else{
-		for(Plant p : Listofplant){
-			System.out.println( i + " " + p.viewDetail());
+		for(Plant p : getListofplant()){
+			System.out.println( i + " " + p.viewDetail() + " StatusWater : " + p.getStatusWater());
 			i++;
 		}
 		}
 	}
+
+	public List<Plant> getListofplant() {
+		return Listofplant;
+	}
+
+	public void setListofplant(List<Plant> listofplant) {
+		Listofplant = listofplant;
+	}
+
 
 }
