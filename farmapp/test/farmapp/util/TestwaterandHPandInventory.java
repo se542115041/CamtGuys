@@ -40,6 +40,8 @@ public class TestwaterandHPandInventory {
 	public void testInventory(){
 		Inventory i = new Inventory("something",5);
 		Inventory f = new Inventory(p4.harvest());
+		i.showInventory();
+		f.showInventory();
 		
 	}
 }
