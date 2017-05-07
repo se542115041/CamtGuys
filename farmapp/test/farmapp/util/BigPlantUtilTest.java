@@ -6,7 +6,7 @@ import org.junit.Test;
 import CamtGuys.farmapp.model.BigPlant;
 import CamtGuys.farmapp.util.MathUtil;
 
-public class PlantUtilTest {
+public class BigPlantUtilTest {
 
 	@Test
 	public void testAddPlant() {

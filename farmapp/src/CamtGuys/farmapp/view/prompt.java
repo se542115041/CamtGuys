@@ -70,7 +70,7 @@ public class prompt {
 	   //Sleep
 	   else if(menu==3){
 		   for(Plant p : garden.getListofplant()){
-			   p.glowUp();
+			   p.growUp();
 			   p.setStatusHarvest();
 		   }
 		   

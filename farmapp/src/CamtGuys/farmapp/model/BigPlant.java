@@ -105,7 +105,7 @@ public class BigPlant implements Plant {
 		return "Name : " + getName() + " HP = " + getHP() + " Age : " + getAge() + " days AgeofFruitable : " + getAgeofFruitable() + " days Fruit : " + getFruit() ;  
 	}
 
-	public void glowUp() {
+	public void growUp() {
 		this.age = this.age+1;
 		if(statusWater == true) setHP(HP + 0.5);
 		else if(statusWater == false) setHP(HP - 1);
