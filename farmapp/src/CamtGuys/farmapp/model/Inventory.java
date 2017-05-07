@@ -9,7 +9,15 @@ public class Inventory {
 		setName(name);
 		setAmount(amount);
 	}
-	public Object getName() {
+	public Inventory(Inventory harvest) {
+		// TODO Auto-generated constructor stub
+		setInventory(harvest);
+	}
+	public void setInventory(Inventory i) {
+		this.name =i.name;
+		this.amount =i.amount;
+	}
+	public String getName() {
 		return name;
 	}
 	public void setName(String something) {
