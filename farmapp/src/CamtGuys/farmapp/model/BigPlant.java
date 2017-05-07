@@ -8,6 +8,7 @@ public class BigPlant implements Plant {
 	private String fruit;
 	private int numbOfFruit;
 	private boolean statusWater;
+	private boolean statusHarvest;
 	
 	
 
@@ -19,12 +20,27 @@ public class BigPlant implements Plant {
 		setFruit(fruit);;
 		setNumbOfFruit(numbOfFruit);
 		this.statusWater = false;
-		
+		setStatusHarvest();
 	}
 	
 	public BigPlant(){
 		
 	}
+	
+	public boolean getStatusHarvest() {
+		return statusHarvest;
+	}
+
+	public void setStatusHarvest() {
+		if(age < ageofFruitable){
+			this.statusHarvest=false;
+		}
+		else{
+			this.statusHarvest=true;
+		}
+		
+	}
+
 	public void setStatusWater(boolean status){
 		this.statusWater = status;
 	}
@@ -99,6 +115,22 @@ public class BigPlant implements Plant {
 	public void water() {
 		// TODO Auto-generated method stub
 		this.statusWater = true;
+	}
+
+	public boolean canHarvest() {
+		// TODO Auto-generated method stub
+		if(getStatusHarvest() == false){
+		return false;
+		}
+		else{
+			return true;
+		}
+	}
+	public Inventory harvest() {
+		Inventory a = new Inventory(getFruit(),getNumbOfFruit());
+		this.statusHarvest = false;
+		return a;
+		
 	}
 
 	

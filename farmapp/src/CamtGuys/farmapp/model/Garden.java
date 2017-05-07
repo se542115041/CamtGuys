@@ -18,7 +18,8 @@ public class Garden implements Plantable {
 			return "No Plant";
 		}
 		else{
-			return getListofplant().get(index).viewDetail() + " StatusWater : " + getListofplant().get(index).getStatusWater();
+			return getListofplant().get(index).viewDetail() + " StatusWater : " + getListofplant().get(index).getStatusWater() 
+					+ " StatusHarvest : " + getListofplant().get(index).getStatusHarvest();
 		}
 	}
 
@@ -30,7 +31,8 @@ public class Garden implements Plantable {
 		}
 		else{
 		for(Plant p : getListofplant()){
-			System.out.println( i + " " + p.viewDetail() + " StatusWater : " + p.getStatusWater());
+			System.out.println( i + " " + p.viewDetail() + " StatusWater : " + p.getStatusWater() 
+			+ " StatusHarvest : " + p.getStatusHarvest());
 			i++;
 		}
 		}
@@ -42,6 +44,45 @@ public class Garden implements Plantable {
 
 	public void setListofplant(List<Plant> listofplant) {
 		Listofplant = listofplant;
+	}
+
+	public void viewDetailAllPlantCanHarvest() {
+		// TODO Auto-generated method stub
+		int i = 1;
+		int l = 0;//check Harvest
+		for(Plant p : getListofplant()){
+			if(p.canHarvest()){
+				l++;
+			}
+		}
+		// TODO Auto-generated method stub
+		if(!checkPlantCanHarvest()){
+			System.out.println("No Plant");
+		}
+		else{
+		for(Plant p : getListofplant()){
+			if(p.canHarvest()){
+			System.out.println( i + " " + p.viewDetail() + " StatusWater : " + p.getStatusWater()
+			+ " StatusHarvest : " + p.getStatusHarvest());
+			}
+			i++;
+		}
+		}
+		
+	}
+
+	public boolean checkPlantCanHarvest() {
+		// TODO Auto-generated method stub
+		int l = 0;//check Harvest
+		for(Plant p : getListofplant()){
+			if(p.canHarvest()){
+				l++;
+			}
+		}
+		if(l == 0){
+			return false;
+		}
+		else return true;
 	}
 
 

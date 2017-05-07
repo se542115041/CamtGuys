@@ -24,4 +24,7 @@ public class Market {
 			i++;
 		}
 	}
+	public Plant Buy(int index){
+		return seedplant.get(index);
+	}
 }
