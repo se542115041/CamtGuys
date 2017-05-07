@@ -2,6 +2,7 @@ package CamtGuys.farmapp.model;
 
 public interface Plantable {
 	
-	void implantPlant(Plant plant);
-	String viewDetailPlant();
+	void  harvestPlant(Plant plant);
+	String viewDetailPlant(int index);
+	void viewDetailAllPlant();
 }
