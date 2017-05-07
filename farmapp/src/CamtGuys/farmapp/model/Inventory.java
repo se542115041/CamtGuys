@@ -6,8 +6,8 @@ public class Inventory {
 	
 	
 	public Inventory(String name, int amount) {
-		this.name = name;
-		this.amount = amount;
+		setName(name);
+		setAmount(amount);
 	}
 	public Object getName() {
 		return name;

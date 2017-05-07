@@ -10,7 +10,9 @@ public class BigPlant implements Plant {
 	private boolean statusWater;
 	private boolean statusHarvest;
 	
-	
+	public BigPlant(){
+		
+	}
 
 	public BigPlant(String name,double HP,int age,int ageofFruitable,String fruit,int numbOfFruit){
 		setName(name);
@@ -19,13 +21,11 @@ public class BigPlant implements Plant {
 		setAgeofFruitable(ageofFruitable);;
 		setFruit(fruit);;
 		setNumbOfFruit(numbOfFruit);
-		this.statusWater = false;
+		setStatusWater(false);
 		setStatusHarvest();
 	}
 	
-	public BigPlant(){
-		
-	}
+
 	
 	public boolean getStatusHarvest() {
 		return statusHarvest;
@@ -52,7 +52,7 @@ public class BigPlant implements Plant {
 		this.name = name;
 	}
 	public void setHP(Double HP){
-		if(HP <= 10.0){
+		if(HP <= 10.0 && HP > 0){
 		this.HP = HP;
 		}
 		else if (HP <= 0){

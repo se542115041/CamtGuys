@@ -63,6 +63,7 @@ public class prompt {
 			System.out.print("Choose your seed : ");
 			menu = selectMenu.nextInt();
 			garden.harvestPlant(seedplant.get(menu - 1));
+			seedplant.remove(menu - 1);
 		   
 	   }
 	   
